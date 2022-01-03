@@ -9,6 +9,16 @@ class User(AbstractUser):
     def __str__(self):
         return self.username
 
+class Category(models.Model):
+    name = models.CharField(max_length=75)
+    slug = models.SlugField(max_length=75, null=True, blank=True, unique=True)
+
+    def __str__(self):
+        return self.name
+
+    def __repr__(self):
+        return f"<Category name={self.name}>"
+
 class Book(models.Model):
     title = models.CharField(max_length=150)
     author = models.CharField(max_length=150)
@@ -17,6 +27,7 @@ class Book(models.Model):
     book_image_url = models.CharField(max_length=150, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
     favorited_by = models.ManyToManyField(User, related_name="favorite_books")
+    category = models.ManyToManyField(Category,related_name="book_category")
 
 
 # Your first goal should be creating a Book model and showing an index of all books. Some details:
