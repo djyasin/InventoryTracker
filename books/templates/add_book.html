@@ -4,14 +4,9 @@
 <h1>Add a Book </h1>
 <div class="form">
     <form action="{% url 'add_book' %}" method="POST">
-        {% csrf_token %}
-        <p> Title: {{ form.title }}</p>
-        <p> Author: {{ form.author }}</p>
-        <p> Description: {{ form.description }}</p>
-        <p> Book URL: {{ form.book_url }}</p>
-        <p> Book Image URL: {{ form.book_image_url }}</p>
-        <p> Category: {{ form.category }}</p>
-            <button type="submit"> Save </button>
+    {% csrf_token %}
+    {{form.as_p}}
+    <button type="submit"> Save </button>
     </form>
 </div>
 {% endblock content %}
