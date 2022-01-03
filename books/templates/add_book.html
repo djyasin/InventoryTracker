@@ -4,7 +4,6 @@
 <h1>Add a Book </h1>
 <div class="form">
     <form action="{% url 'add_book' %}" method="POST">
-        <!-- change query to single habit, for records need habit.record.all -->
         {% csrf_token %}
         <p> Title: {{ form.title }}</p>
         <p> Author: {{ form.author }}</p>
@@ -12,7 +11,7 @@
         <p> Book URL: {{ form.book_url }}</p>
         <p> Book Image URL: {{ form.book_image_url }}</p>
         <p> Category: {{ form.category }}</p>
-        <input type="submit" value="Submit">
+            <button type="submit"> Save </button>
     </form>
 </div>
 {% endblock content %}

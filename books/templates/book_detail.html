@@ -2,12 +2,13 @@
 <h1>{{ book.title }}</h1>
 <h4>by {{ book.author }}</h4>
 {% if book.book_image_url %}
-<img src='{{ book.book_image_url}}'>
+<img src='{{ book.book_image_url}}' width="100" height="150">
 {% endif %}
 <h4>
     <a href="{{ book.url }}">Buy Here</a>
 </h4>
 <h4>{{ book.description }}</h4>
 <h4>Added On: {{ book.created_at }}</h4>
+<p><a href="{% url 'edit_book' pk=book.pk %}"> Edit Book</a></p>
 <p><a href="{% url 'delete_book' pk=book.pk %}"> Delete Book</a></p>
 {% endblock %}
