@@ -30,3 +30,11 @@ def add_book(request):
 def book_detail(request, pk):
     book = get_object_or_404(Book, pk=pk)
     return render(request, 'book_detail.html', {"book": book})
+
+def delete_book(request, pk):
+    book = get_object_or_404(Book, pk=pk)
+    if request.method == 'POST':
+        book.delete()
+        return redirect(to='/')
+    return render(request, "delete_book.html",
+                {"book": book})
