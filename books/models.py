@@ -20,14 +20,14 @@ class Category(models.Model):
         return f"<Category name={self.name}>"
 
 class Book(models.Model):
-    title = models.CharField(max_length=150, null=True)
-    author = models.CharField(max_length=150, null=True)
-    description = models.TextField(max_length=500, null=True)
-    book_url = models.CharField(max_length=150, null=True)
-    book_image_url = models.CharField(max_length=150, null=True)
-    created_at = models.DateTimeField(auto_now_add=True)
-    favorited_by = models.ManyToManyField(User, related_name="favorite_books",)
-    category = models.ManyToManyField(Category,related_name="book_category",)
+    title = models.CharField(max_length=150, blank=True)
+    author = models.CharField(max_length=150, blank=True)
+    description = models.TextField(max_length=500, blank=True)
+    book_url = models.CharField(max_length=150, blank=True)
+    book_image_url = models.CharField(max_length=150, blank=True)
+    created_at = models.DateTimeField(auto_now_add=True, blank=True)
+    favorited_by = models.ManyToManyField(User, related_name="favorite_books",blank=True)
+    category = models.ManyToManyField(Category,related_name="book_category", blank=True)
 
 
 # Your first goal should be creating a Book model and showing an index of all books. Some details:
