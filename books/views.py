@@ -1,4 +1,25 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect, get_object_or_404
+from .models import Book, Category, User
+from django.contrib.auth.forms import UserCreationForm
+from .forms import BookForm, CategoryForm, UserForm
 # Create your views here.
+def home(request):
+    user = request.user
+    books = Book.objects.filter()
+
+    return render(request, "home.html", {"books": books,})
+
 def book_library(request):
     pass
+
+def add_book(request):
+    if request.method == "GET":
+        form = BookForm()
+    else:
+        form = BookForm(data=request.POST)
+        if form.is_valid():
+            form = form.save(commit=False)
+            form.user_id = request.user
+            form.save()
+            return redirect(to='home')
+    return render(request, "add_book.html", {"form": form}) 

@@ -13,7 +13,7 @@ class UserForm(UserCreationForm):
 class BookForm(forms.ModelForm):
     class Meta:
         model = Book
-        fields = ["title", "author", "description", "book_url", "book_image_url", "created_at", "favorited_by", "category",]
+        fields = ["title", "author", "description", "book_url", "book_image_url", "favorited_by", "category",]
 
 class CategoryForm(forms.ModelForm):
     class Meta:
