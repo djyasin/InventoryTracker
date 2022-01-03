@@ -10,7 +10,10 @@ def home(request):
     return render(request, "home.html", {"books": books,})
 
 def book_library(request):
-    pass
+    user = request.user
+    books = Book.objects.filter()
+
+    return render(request, "book_library.html", {"books": books,})
 
 def add_book(request):
     if request.method == "GET":
@@ -23,3 +26,7 @@ def add_book(request):
             form.save()
             return redirect(to='home')
     return render(request, "add_book.html", {"form": form}) 
+
+def book_detail(request, pk):
+    book = get_object_or_404(Book, pk=pk)
+    return render(request, 'book_detail.html', {"book": book})

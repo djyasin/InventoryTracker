@@ -1,0 +1,9 @@
+{% extends "base.html" %} {} {% block content %}
+<h1>{{ book.title }}</h1>
+<h3>by {{ book.author }}</h3>
+<h3>
+    <a href="{{ book.url }}">Buy Here</a>
+</h3>
+<h3>{{ book.description }}</h3>
+<h4>Added On: {{ book.created_at }}</h4>
+{% endblock %}
