@@ -13,7 +13,10 @@ class Book(models.Model):
     title = models.CharField(max_length=150)
     author = models.CharField(max_length=150)
     description = models.TextField(max_length=500)
+    book_url = models.CharField(max_length=150)
+    book_image_url = models.CharField(max_length=150, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
+    favorited_by = models.ManyToManyField(User, related_name="favorite_books")
 
 
 # Your first goal should be creating a Book model and showing an index of all books. Some details:
