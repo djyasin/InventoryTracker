@@ -1,6 +1,5 @@
 {% extends "base.html" %} {} {% block content %}
-<h1>{{ book.title }}</h1>
-<h4>by {{ book.author }}</h4>
+<h1 class="subtitle">{{ book.title }} -{{ book.author }}</h1>
 {% if book.book_image_url %}
 <img src='{{ book.book_image_url}}' width="100" height="150">
 {% endif %}
