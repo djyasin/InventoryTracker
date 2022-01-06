@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block title %}{{ category.name }} Books{% endblock title %}
+
+{% block navbar %}
+<a class="link dim white dib mr3 fr" href="{% url 'auth_logout' %}" title="Logout">Log Out</a>
+{% endblock navbar %}
+
+{% block content %}
+<div>
+    <h1>{{ category.name }}</h1>
+    {% for book in books %}
+    <div>
+        <p>
+            <h3>{{ book.title }}</h3>
+            <h4><span class='f6'>by</span> {{ book.author }}</h4>
+        </p>
+        <h4>
+            <a href={{ book.url }}>Available Here</a>
+        </h4>
+        <h4>{{ book.description }}</h4>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

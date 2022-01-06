@@ -68,3 +68,4 @@ def add_category(request):
             form.save()
             return redirect(to="home")
     return render(request, "add_category.html", {"form": form})
+

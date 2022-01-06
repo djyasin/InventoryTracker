@@ -6,7 +6,7 @@
 <div>
     <form action="{% url 'add_category' %}", method="POST">
         {% csrf_token %}
-        {{ form.as_p }}
+        {{ category.name }}
         <div>
             <button type="submit">Add Category</button>
         </div>
