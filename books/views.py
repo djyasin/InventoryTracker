@@ -58,3 +58,13 @@ def add_book(request):
         form = BookForm()
 
     return render(request, "add_book.html", {"form": form})
+
+def add_category(request):
+    if request == 'GET':
+        form = CategoryForm()
+    else:
+        form = CategoryForm(data=request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect(to="home")
+    return render(request, "add_category.html", {"form": form})
