@@ -29,4 +29,5 @@ urlpatterns = [
     path('book_detail/<int:pk>', books_views.book_detail, name="book_detail"),
     path('delete_book/<int:pk>/', books_views.delete_book, name='delete_book'),
     path('edit_book/<int:pk>/', books_views.edit_book, name="edit_book"),
+    path('accounts/', include('registration.backends.simple.urls')),
 ]

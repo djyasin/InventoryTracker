@@ -11,6 +11,7 @@ werkzeug = "*"
 django-extensions = "*"
 django-registration-redux = "*"
 psycopg2-binary = "*"
+django-simple-bulma = "*"
 
 [dev-packages]
 

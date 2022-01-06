@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser
+from django.urls import reverse
 
 
 class User(AbstractUser):
@@ -30,10 +31,3 @@ class Book(models.Model):
     category = models.ManyToManyField(Category,related_name="book_category", blank=True)
 
 
-# Your first goal should be creating a Book model and showing an index of all books. Some details:
-
-# - Books have, at a minimum, a title, author, description, URL, and date added to the database (`created_at`).
-# - Book URLs (the URL field in the database) should be unique.
-# - Admins can add, edit, and delete books.
-# - You should have initial data for books (a CSV is provided, but you can edit it to fit your data).
-# - Books should be displayed in order with the most recently added at the top.

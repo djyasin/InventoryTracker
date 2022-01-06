@@ -1,0 +1,17 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+body { margin: 0; }
+header { 
+    background-color: #004175;
+    padding: 30px;
+    padding-left: 25px;
+    border-bottom: 4px solid #89deef;
+    font-family: Oswald, sans-serif;
+ }
+h1 {color: white;}
+.adopttext {
+    text-indent: 20px;
+  
+}
