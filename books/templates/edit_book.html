@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h1>Edit Habit {{ habit.habit }} </h1>
+<h1>Edit Inventory {{ book.name }} </h1>
 
 <div>
   <form action="{% url 'edit_book' pk=book.pk %}" method="POST">

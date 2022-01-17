@@ -13,6 +13,7 @@ This is a Django application designed to track inventory for book sellers.
 - Users can register an account
 - Logged in users can add, edit, and delete inventory
 - Guests can view the library of books and book details
+** Ability to assign/remove inventory items to a named group/collection(category)
 
 ## Demo
 

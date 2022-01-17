@@ -20,7 +20,8 @@ def book_library(request):
 @login_required
 def book_detail(request, pk):
     book = get_object_or_404(Book, pk=pk)
-    return render(request, 'book_detail.html', {"book": book})
+    category = book.category.all()
+    return render(request, 'book_detail.html', {"category": category, "book": book})
 
 @login_required
 def delete_book(request, pk):

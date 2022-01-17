@@ -8,6 +8,9 @@
 </h4>
 <h4>{{ book.description }}</h4>
 <h4>Added On: {{ book.created_at }}</h4>
+{% for category in book.category.all %}
+<h4>Category: {{ category.name }}</h4>
+{% endfor %}
 <p><a href="{% url 'edit_book' pk=book.pk %}"> Edit Book</a></p>
 <p><a href="{% url 'delete_book' pk=book.pk %}"> Delete Book</a></p>
 {% endblock %}
