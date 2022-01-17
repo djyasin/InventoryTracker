@@ -8,7 +8,7 @@ This is a Django application designed to track inventory for book sellers.
 ## With this app you can:
 
 - Catalog books with the following information:
-- - title, author, description, url, book image, creation date, and category
+    - title, author, description, url, book image, creation date, and category
 - Create book categories
 - Users can register an account
 - Logged in users can add, edit, and delete inventory
