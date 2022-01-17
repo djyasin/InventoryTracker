@@ -6,7 +6,13 @@
 <div>
   <form action="{% url 'edit_book' pk=book.pk %}" method="POST">
     {% csrf_token %}
-    {{ form.as_p }}
+    <p> Title: {{ form.title }}</p>
+    <p> Author: {{ form.author }}</p>
+    <p> Description: {{ form.description }}</p>
+    <p> Book URL: {{ form.book_url }}</p>
+    <p> Book Image URL: {{ form.book_image_url }}</p>
+    <p> Category: {{ form.category }}</p>
+    <input type="submit" value="Submit">
     <div>
       <button type="submit">Submit Changes</button>
       <a href="{% url 'home' %}">Cancel</a>

@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="{% static 'static/css.css' %}">
 
 
-    <title>Freeshelf</title>
+    <title>Book Inventory Tracker</title>
 </head>
 
 <body>
@@ -23,10 +23,10 @@
             <div class="hero-body">
                     <div class="container">
         <div id="title">
-            <h1 class="title">Freeshelf</h1>
+            <h1 class="title">Book Inventory Tracker</h1>
             </div>
                 {% if user.is_authenticated %}
-            <li>You are logged in. Hello, {{ user.username }} &#128059;</li>
+            <li>You are logged in. Hello, {{ user.username }} </li>
                 {% endif %}
             <li><a href="{% url 'home' %}">Home</a></li>
             <li><a href="{% url 'auth_logout' %}">Logout</a></li>
