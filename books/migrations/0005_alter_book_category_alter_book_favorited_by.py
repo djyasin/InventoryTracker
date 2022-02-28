@@ -7,18 +7,22 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('books', '0004_alter_book_author_alter_book_book_url_and_more'),
+        ("books", "0004_alter_book_author_alter_book_book_url_and_more"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='book',
-            name='category',
-            field=models.ManyToManyField(related_name='book_category', to='books.Category'),
+            model_name="book",
+            name="category",
+            field=models.ManyToManyField(
+                related_name="book_category", to="books.Category"
+            ),
         ),
         migrations.AlterField(
-            model_name='book',
-            name='favorited_by',
-            field=models.ManyToManyField(related_name='favorite_books', to=settings.AUTH_USER_MODEL),
+            model_name="book",
+            name="favorited_by",
+            field=models.ManyToManyField(
+                related_name="favorite_books", to=settings.AUTH_USER_MODEL
+            ),
         ),
     ]

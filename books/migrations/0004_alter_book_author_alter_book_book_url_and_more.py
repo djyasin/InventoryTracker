@@ -7,43 +7,47 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('books', '0003_category_book_category'),
+        ("books", "0003_category_book_category"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='book',
-            name='author',
+            model_name="book",
+            name="author",
             field=models.CharField(max_length=150, null=True),
         ),
         migrations.AlterField(
-            model_name='book',
-            name='book_url',
+            model_name="book",
+            name="book_url",
             field=models.CharField(max_length=150, null=True),
         ),
         migrations.AlterField(
-            model_name='book',
-            name='category',
-            field=models.ManyToManyField(null=True, related_name='book_category', to='books.Category'),
+            model_name="book",
+            name="category",
+            field=models.ManyToManyField(
+                null=True, related_name="book_category", to="books.Category"
+            ),
         ),
         migrations.AlterField(
-            model_name='book',
-            name='description',
+            model_name="book",
+            name="description",
             field=models.TextField(max_length=500, null=True),
         ),
         migrations.AlterField(
-            model_name='book',
-            name='favorited_by',
-            field=models.ManyToManyField(null=True, related_name='favorite_books', to=settings.AUTH_USER_MODEL),
+            model_name="book",
+            name="favorited_by",
+            field=models.ManyToManyField(
+                null=True, related_name="favorite_books", to=settings.AUTH_USER_MODEL
+            ),
         ),
         migrations.AlterField(
-            model_name='book',
-            name='title',
+            model_name="book",
+            name="title",
             field=models.CharField(max_length=150, null=True),
         ),
         migrations.AlterField(
-            model_name='category',
-            name='name',
+            model_name="category",
+            name="name",
             field=models.CharField(max_length=75, null=True),
         ),
     ]

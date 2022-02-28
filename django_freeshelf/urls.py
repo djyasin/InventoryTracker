@@ -23,12 +23,12 @@ from books import views as books_views
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path('', books_views.home, name='home'),
-    path('add_book/', books_views.add_book, name="add_book"),
-    path('book_library/', books_views.book_library, name="book_library"),
-    path('book_detail/<int:pk>', books_views.book_detail, name="book_detail"),
-    path('delete_book/<int:pk>/', books_views.delete_book, name='delete_book'),
-    path('edit_book/<int:pk>/', books_views.edit_book, name="edit_book"),
-    path('accounts/', include('registration.backends.simple.urls')),
-    path('add_category/', books_views.add_category, name="add_category"),
+    path("", books_views.home, name="home"),
+    path("add_book/", books_views.add_book, name="add_book"),
+    path("book_library/", books_views.book_library, name="book_library"),
+    path("book_detail/<int:pk>", books_views.book_detail, name="book_detail"),
+    path("delete_book/<int:pk>/", books_views.delete_book, name="delete_book"),
+    path("edit_book/<int:pk>/", books_views.edit_book, name="edit_book"),
+    path("accounts/", include("registration.backends.simple.urls")),
+    path("add_category/", books_views.add_category, name="add_category"),
 ]

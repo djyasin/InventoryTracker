@@ -139,11 +139,11 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 AUTH_USER_MODEL = "books.User"
 
-STATIC_URL = 'books/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATIC_URL = "books/static/"
+STATIC_ROOT = os.path.join(BASE_DIR, "static")
 
 STATICFILES_FINDERS = [
-    'django.contrib.staticfiles.finders.FileSystemFinder',
-    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-    'django_simple_bulma.finders.SimpleBulmaFinder',
+    "django.contrib.staticfiles.finders.FileSystemFinder",
+    "django.contrib.staticfiles.finders.AppDirectoriesFinder",
+    "django_simple_bulma.finders.SimpleBulmaFinder",
 ]
